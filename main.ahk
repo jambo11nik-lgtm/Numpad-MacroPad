@@ -311,7 +311,7 @@ DirGet(path) {
 class JSON {
     static Parse(str) {
         pos := 1
-        return Jxon_Load(&str, pos)
+        return Jxon_Load(&str, &pos)
     }
 
     static Dump(obj, indent:="") {
@@ -319,7 +319,7 @@ class JSON {
     }
 }
 
-Jxon_Load(&src, pos) {
+Jxon_Load(&src, &pos) {
     static quot := Chr(34)
     if !IsSet(pos)
         pos := 1
@@ -345,7 +345,7 @@ Jxon_Load(&src, pos) {
             if (m[0] != ":")
                 throw Error("Expected ':' after key")
             pos++
-            val := Jxon_Load(&src, pos)
+            val := Jxon_Load(&src, &pos)
             obj[key] := val
             pos := Jxon_Skip(src, pos)
             if SubStr(src, pos, 1) = "}" {
@@ -365,7 +365,7 @@ Jxon_Load(&src, pos) {
                 pos++
                 break
             }
-            arr.Push(Jxon_Load(&src, pos))
+            arr.Push(Jxon_Load(&src, &pos))
             pos := Jxon_Skip(src, pos)
             if SubStr(src, pos, 1) = "]" {
                 pos++
@@ -461,6 +461,6 @@ StrRepeat(str, count) {
 }
 
 Jxon_Skip(&src, pos) {
-    pos := RegExMatch(src, "\S", , pos)
+    pos := RegExMatch(src, "\S", &m, pos)
     return pos
 }
