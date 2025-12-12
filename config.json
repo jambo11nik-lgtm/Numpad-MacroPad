@@ -1,0 +1,34 @@
+{
+  "layers": [
+    {
+      "name": "Default",
+      "actions": [
+        {"label": "Copy", "type": "Send Key", "value": "Ctrl+C"},
+        {"label": "Paste", "type": "Send Key", "value": "Ctrl+V"},
+        {"label": "New", "type": "Send Key", "value": "Ctrl+N"},
+        {"label": "Save", "type": "Send Key", "value": "Ctrl+S"},
+        {"label": "Undo", "type": "Send Key", "value": "Ctrl+Z"},
+        {"label": "Redo", "type": "Send Key", "value": "Ctrl+Y"},
+        {"label": "Run", "type": "Send Text", "value": "Hello"},
+        {"label": "Browser", "type": "Run Program", "value": "https://example.com"},
+        {"label": "Explorer", "type": "Run Program", "value": "explorer.exe"},
+        {"label": "Mute", "type": "Send Key", "value": "Volume_Mute"}
+      ]
+    },
+    {
+      "name": "Media",
+      "actions": [
+        {"label": "Play/Pause", "type": "Send Key", "value": "Media_Play_Pause"},
+        {"label": "Prev", "type": "Send Key", "value": "Media_Prev"},
+        {"label": "Next", "type": "Send Key", "value": "Media_Next"},
+        {"label": "", "type": "Send Key", "value": ""},
+        {"label": "", "type": "Send Key", "value": ""},
+        {"label": "", "type": "Send Key", "value": ""},
+        {"label": "", "type": "Send Key", "value": ""},
+        {"label": "", "type": "Send Key", "value": ""},
+        {"label": "", "type": "Send Key", "value": ""},
+        {"label": "", "type": "Send Key", "value": ""}
+      ]
+    }
+  ]
+}
