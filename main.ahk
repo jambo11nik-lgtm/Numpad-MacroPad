@@ -319,7 +319,7 @@ class JSON {
     }
 }
 
-Jxon_Load(&src, ByRef pos:=1) {
+Jxon_Load(&src, ByRef pos := 1) {
     static quot := Chr(34)
     pos := RegExMatch(src, "\S", &m, pos)
     if !pos
