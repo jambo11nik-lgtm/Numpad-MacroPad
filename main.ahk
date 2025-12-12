@@ -319,8 +319,10 @@ class JSON {
     }
 }
 
-Jxon_Load(&src, ByRef pos := 1) {
+Jxon_Load(&src, pos) {
     static quot := Chr(34)
+    if !IsSet(pos)
+        pos := 1
     pos := RegExMatch(src, "\S", &m, pos)
     if !pos
         return
@@ -458,7 +460,7 @@ StrRepeat(str, count) {
     return out
 }
 
-Jxon_Skip(ByRef src, pos) {
+Jxon_Skip(&src, pos) {
     pos := RegExMatch(src, "\S", , pos)
     return pos
 }
