@@ -101,6 +101,13 @@ class MacroPad {
     }
 
     CurrentLayer() {
+        total := this.cfg.config.layers.Length
+        if total = 0
+            return
+        if this.currentLayerIndex > total
+            this.currentLayerIndex := total
+        if this.currentLayerIndex < 1
+            this.currentLayerIndex := 1
         return this.cfg.config.layers[this.currentLayerIndex]
     }
 
@@ -240,7 +247,7 @@ class MacroPad {
         }
         key := Trim(last)
         if (RegExMatch(key, "^[A-Za-z0-9]$")) {
-            send .= Lower(key)
+            send .= StrLower(key)
         } else {
             send .= "{" key "}"
         }
